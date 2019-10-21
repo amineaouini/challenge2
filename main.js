@@ -42,17 +42,17 @@ Create a factory function called makeComputer that represents computers,
 What different attributes computers may have? 
 Create two computers object from your factory function and save them in one array called computers!
 
-Note: please write one or two lines here describing your solution.
+Note: 1. i just modeled the data to an object :D / 2. i returned computer.
 */
 
 function makeComputer(type, color, weight) {
-  // TODO: Your code here
+  return {cType: type, cColor: color, cWeight: weight};
 }
 
 // Write a function displayComputer that can be used to display one computer.
 
 function displayComputer(computer) {
-  // TODO: Your code here
+  return computer;
 }
 
 //=============================================================================
@@ -66,14 +66,16 @@ and returns an array of all of those strings, but transformed to upper case.
 You can use toUpperCase method to convert a string to upper case. 
 Solve it using the most appropriate helper functions(each,map,filter).
 
-Note: please write one or two lines here describing your solution.
+Note: i used map to return the elements to upper cases.
 
 var strArr = ['hello', 'world', 'whirled', 'peas'];
 uppercaseAll(strArr); ==> [ 'HELLO', 'WORLD', 'WHIRLED', 'PEAS' ]
 */
 
 function uppercaseAll(arrayOfStrings) {
-  // TODO: your code here
+  return map(arrayOfStrings, function (e){
+    return e.toUpperCase()
+  });
 }
 
 //=============================================================================
@@ -112,7 +114,9 @@ var data = [
 ];
 
 function highestPopulation(arrayOfObjects) {
-  // TODO: your code here
+  return filter(arrayOfObjects, function (e, i){
+    return e.population >= 500000000;
+  });
 }
 
 //=============================================================================
@@ -128,11 +132,13 @@ Note: solve it using the most appropriate helper functions(each,map,filter)
 var numsArray = [2, 6, 20, 8, 14];
 halveAll(numsArray); ==> [ 1, 3, 10, 4, 7 ]
 
-Note: please write one or two lines here describing your solution.
+Note: i used map function to return numbers elements devided by 2 on new array.
 */
 
 function halveAll(numbers) {
-  // your code is here
+  return map (numbers, function (e){
+    return e / 2;
+  })
 }
 
 //=============================================================================
@@ -145,10 +151,16 @@ Solve it using one of the most appropriate helpers functions(each,map,filter).
 
 values({first : 5, second: 'something' , third : 129}) ==> [5, 'something', 129];
 
-Note: please write one or two lines here describing your solution.
+Note: i took the values of the object and return in array.
 */
 function values(obj) {
-  // TODO: your code here
+  var arr = [];
+
+  each(obj, function (value, key){
+    arr.push(value);
+  });
+
+  return arr;
 }
 
 //Good Luck :))
